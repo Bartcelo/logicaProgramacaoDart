@@ -1,0 +1,36 @@
+import 'dart:convert';
+
+void main() {
+  String json = '''
+   { 
+    "usuarios": [
+   {  
+    "nome":"Marcelo",
+    "endereco":"Ferraz"
+    },
+    {
+    "nome":"Filipe",
+    "endereco":"Mogi"
+    },
+    {
+    "nome":"Odara",
+    "endereco":"Mogi"
+    },
+    {
+    "nome":"Raiane",
+    "endereco":"Ferraz"
+    }
+    ]
+    }
+  ''';
+
+  Map<String, dynamic> usuario = jsonDecode(json);
+
+  int i = 0;
+  var contarUsuarios = usuario['usuarios'].length;
+
+  while (i <= contarUsuarios) {
+    print("O nome do usuario é ${usuario['usuarios'][i]}");
+    i++;
+  }
+}
